@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -26,38 +29,53 @@ public class RunMe extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        dekstopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menu = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        menuLogin = new javax.swing.JMenuItem();
+        menuLogout = new javax.swing.JMenuItem();
+        menuExit = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout dekstopPaneLayout = new javax.swing.GroupLayout(dekstopPane);
+        dekstopPane.setLayout(dekstopPaneLayout);
+        dekstopPaneLayout.setHorizontalGroup(
+            dekstopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 577, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        dekstopPaneLayout.setVerticalGroup(
+            dekstopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 292, Short.MAX_VALUE)
         );
 
         Menu.setText("LOGIN");
 
-        jMenuItem2.setText("Login");
-        Menu.add(jMenuItem2);
+        menuLogin.setText("Login");
+        menuLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLoginActionPerformed(evt);
+            }
+        });
+        Menu.add(menuLogin);
 
-        jMenuItem3.setText("Logout");
-        Menu.add(jMenuItem3);
+        menuLogout.setText("Logout");
+        menuLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLogoutActionPerformed(evt);
+            }
+        });
+        Menu.add(menuLogout);
 
-        jMenuItem4.setText("Exit");
-        Menu.add(jMenuItem4);
+        menuExit.setText("Exit");
+        menuExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuExitActionPerformed(evt);
+            }
+        });
+        Menu.add(menuExit);
 
         jMenuBar1.add(Menu);
 
@@ -67,15 +85,51 @@ public class RunMe extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(dekstopPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(dekstopPane)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLoginActionPerformed
+
+        dekstopPane.removeAll();
+        LoginForm loginForm = new LoginForm();
+        loginForm.setVisible(true);
+        dekstopPane.add(loginForm);
+        menuLogin.setEnabled(true);
+        menuLogout.setEnabled(false);
+        
+    }//GEN-LAST:event_menuLoginActionPerformed
+
+    private void menuLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLogoutActionPerformed
+        
+        dekstopPane.removeAll();
+        LoginForm loginForm = new LoginForm();
+        loginForm.setVisible(true);
+        dekstopPane.add(loginForm);
+        menuLogin.setEnabled(false);
+        menuLogout.setEnabled(true);
+        
+    }//GEN-LAST:event_menuLogoutActionPerformed
+
+    private void menuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExitActionPerformed
+        int pilih = JOptionPane.showConfirmDialog(null, "Keluar aplikasi?", "Konfirmasi", JOptionPane.OK_CANCEL_OPTION);
+        
+        if (pilih == JOptionPane.OK_OPTION) {
+            
+            System.exit(0);
+            
+        } else {
+            
+            JOptionPane.getRootFrame();
+            
+        }
+    }//GEN-LAST:event_menuExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,11 +168,11 @@ public class RunMe extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Menu;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane dekstopPane;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem menuExit;
+    private javax.swing.JMenuItem menuLogin;
+    private javax.swing.JMenuItem menuLogout;
     // End of variables declaration//GEN-END:variables
 }
