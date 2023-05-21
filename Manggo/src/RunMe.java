@@ -62,6 +62,7 @@ public class RunMe extends javax.swing.JFrame {
         Menu.add(menuLogin);
 
         menuLogout.setText("Logout");
+        menuLogout.setEnabled(false);
         menuLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuLogoutActionPerformed(evt);
@@ -101,8 +102,8 @@ public class RunMe extends javax.swing.JFrame {
         LoginForm loginForm = new LoginForm();
         loginForm.setVisible(true);
         dekstopPane.add(loginForm);
-        menuLogin.setEnabled(true);
-        menuLogout.setEnabled(false);
+        menuLogin.setEnabled(false);
+        menuLogout.setEnabled(true);
         
     }//GEN-LAST:event_menuLoginActionPerformed
 
@@ -112,8 +113,9 @@ public class RunMe extends javax.swing.JFrame {
         LoginForm loginForm = new LoginForm();
         loginForm.setVisible(true);
         dekstopPane.add(loginForm);
-        menuLogin.setEnabled(false);
-        menuLogout.setEnabled(true);
+        menuLogout.setEnabled(false);
+        menuLogin.setEnabled(true);
+        
         
     }//GEN-LAST:event_menuLogoutActionPerformed
 
