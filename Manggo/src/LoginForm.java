@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
@@ -101,6 +104,17 @@ public class LoginForm extends javax.swing.JInternalFrame {
         
         if (username.equalsIgnoreCase(txt_Username.getText())&& password.equalsIgnoreCase(txt_Password.getText())) {
             
+            FormNav formNav = new FormNav();
+            formNav.setVisible(true);
+            this.getDesktopPane().add(formNav);
+            this.dispose();
+            JOptionPane.showMessageDialog(null, "ANDA BERHASIL LOGIN");
+            
+        }else{
+            
+            JOptionPane.showMessageDialog(null, "PASSWORD / USERNAME SALAH");
+            txt_Username.setText("");
+            txt_Password.setText("");
             
             
         }
