@@ -29,6 +29,11 @@ public class FormNav extends javax.swing.JInternalFrame {
         butShowData = new javax.swing.JButton();
 
         butInData.setText("Masukan data");
+        butInData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butInDataActionPerformed(evt);
+            }
+        });
 
         butShowData.setText("Tampilkan data");
         butShowData.addActionListener(new java.awt.event.ActionListener() {
@@ -62,8 +67,20 @@ public class FormNav extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void butShowDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butShowDataActionPerformed
-        // TODO add your handling code here:
+        
+      
+        
     }//GEN-LAST:event_butShowDataActionPerformed
+
+    private void butInDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butInDataActionPerformed
+
+          
+          InputDataForm id = new InputDataForm();
+          id.setVisible(true);
+          this.getDesktopPane().add(id);
+          this.dispose();
+        
+    }//GEN-LAST:event_butInDataActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

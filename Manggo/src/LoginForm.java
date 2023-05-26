@@ -115,6 +115,7 @@ public class LoginForm extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "PASSWORD / USERNAME SALAH");
             txt_Username.setText("");
             txt_Password.setText("");
+            txt_Username.requestFocus();
             
             
         }
