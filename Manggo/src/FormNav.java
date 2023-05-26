@@ -67,7 +67,13 @@ public class FormNav extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void butShowDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butShowDataActionPerformed
-        
+
+
+    ShowData sd = new ShowData(null);
+    sd.setVisible(true);
+    this.getDesktopPane().add(sd);
+    this.dispose();
+    
       
         
     }//GEN-LAST:event_butShowDataActionPerformed
