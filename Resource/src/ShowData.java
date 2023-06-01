@@ -12,9 +12,14 @@ public class ShowData extends javax.swing.JInternalFrame {
     /**
      * Creates new form ShowData
      */
-    public ShowData() {
+    public ShowData(String [] data) {
         initComponents();
+    
+    showTable();
+    
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
